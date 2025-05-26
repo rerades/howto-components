@@ -1,69 +1,69 @@
-# HowTo: Components
+# Guía de Uso: Componentes
 
-![Travis CI Build status badge](https://travis-ci.org/GoogleChrome/howto-components.svg?branch=master)
+![Insignia de estado de construcción de Travis CI](https://travis-ci.org/GoogleChrome/howto-components.svg?branch=master)
 
-“HowTo: Components” is [a subsection on Web Fundamentals Architecture section](https://developers.google.com/web/fundamentals/web-components/examples/), containing a collection of web components that implement common web UI patterns using modern web technologies like Custom Elements v1 and ESnext with a special focus on accessibility, performance and progressive enhancement. Their purpose is to be an educational resource. Users are supposed to read and learn from their implementations. They are explicitly **NOT** a UI library meant to be used in production.
+"Guía de Uso: Componentes" es [una subsección de la sección de Arquitectura de Fundamentos Web](https://developers.google.com/web/fundamentals/web-components/examples/), la cual contiene una recopilación de componentes web que implementan patrones comunes de UI web utilizando tecnologías modernas como Custom Elements v1 y ESnext. Esta sección se enfoca especialmente en accesibilidad, rendimiento y mejora progresiva. El propósito de estos componentes es servir como un recurso educativo. Se espera que los usuarios lean e interpreten sus implementaciones. Cabe aclarar que **NO** son una biblioteca de UI destinada a ser utilizada en producción.
 
 ## Demos
 
-You can run the demos locally, after you build them:
+Puedes ejecutar las demostraciones localmente, después de haberlas construido:
 
 ```
-npm install  # if you haven't already
+npm install  # si aún no lo has hecho
 npm run build
-python -m SimpleHTTPServer  # or your favourite local server
+python -m SimpleHTTPServer  # o cualquier servidor local que prefieras
 ```
 
-In your browser, navigate to `http://localhost:8000/docs` (or the port that you're running the local server from.)
+En tu navegador, navega a `http://localhost:8000/docs` (o el puerto desde el cual estás ejecutando el servidor local).
 
-You can also run
+También puedes ejecutar,
 
 ```
 npm run watch
 ```
 
-to continuously run the build whenever a file changes.
+para compilar de forma continua cada vez que un archivo cambie.
 
-### WebFundamentals
+### FundamentosWeb
 
-To generate the content for [WebFundamentals](https://github.com/Google/WebFundamentals), run the `build-webfundamentals.sh` script. It will create a `webfundamentals` folder. The contents needs to be moved into the WebFundamentals repository. If new components have been created, they need to be added manually to [WebFundamentals Web Components table of contents](https://github.com/google/WebFundamentals/blob/master/src/content/en/fundamentals/web-components/_toc.yaml).
+Para generar el contenido de [WebFundamentals](https://github.com/Google/WebFundamentals), ejecuta el script `build-webfundamentals.sh`. Este creará una carpeta `webfundamentals`. Su contenido debe ser movido al repositorio de WebFundamentals. Si se han creado nuevos componentes, deben ser añadidos manualmente al [Índice de Contenidos de Componentes Web de WebFundamentals](https://github.com/google/WebFundamentals/blob/master/src/content/en/fundamentals/web-components/_toc.yaml).
 
-## Testing
+## Pruebas
 
-Tests are written using [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/). Each component has tests.
+Las pruebas son escritas usando [Mocha](https://mochajs.org/) y [Chai](http://chaijs.com/). Cada componente tiene pruebas.
 
 ### Local
 
-Tests run using [Karma](https://karma-runner.github.io/1.0/config/browsers.html). Run the tests with
+Las pruebas se ejecutan usando [Karma](https://karma-runner.github.io/1.0/config/browsers.html). Ejecuta las pruebas con
 
 ```
 $ npm test
 ```
 
-This assumes that Chrome, Firefox and Safari are installed as the tests run in all of these browser (using the [Custom Elements v1 Polyfill](https://github.com/webcomponents/custom-elements)).
+Esto asume que Chrome, Firefox y Safari están instalados ya que las pruebas se ejecutan en todos estos navegadores (utilizando el [Polyfill de Custom Elements v1](https://github.com/webcomponents/custom-elements)).
 
-### Local + Docker (or Travis)
+### Local + Docker (o Travis)
 
-Tests can also run in a [Docker](https://www.docker.com/) container (as we do on Travis):
+Las pruebas también pueden ejecutarse en un contenedor de [Docker](https://www.docker.com/) (tal como lo hacemos en Travis):
 
 ```
 $ npm run docker
 ```
 
-This builds a docker image `googlechrome/howto-components` and runs it. The dockerized tests use Chrome only.
+Esto construye una imagen de docker `googlechrome/howto-components` y la ejecuta. Las pruebas dockerizadas utilizan solo Chrome.
 
-## Staging
+## Versiones preliminares
 
-All branches and PRs are built and uploaded on Travis CI. The staged version can be viewed at `http://dash-elements.surma.link/<commit hash>`.
+Todas las ramas y PRs se construyen y cargan en Travis CI. La versión preliminar puede ser vista en `http://dash-elements.surma.link/<commit hash>`.
 
-## License
+## Licencia
 
 Copyright 2017 Google, Inc.
 
-Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file to you under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+Licenciado a la Apache Software Foundation (ASF) bajo uno o más acuerdos de licencia de colaborador. Consulta el archivo NOTICE distribuido con este trabajo para obtener información adicional sobre la propiedad de derechos de autor. La ASF licencia este archivo bajo la Licencia Apache, Versión 2.0 (la “Licencia”); no puedes utilizar este archivo excepto en cumplimiento de la Licencia. Puedes obtener una copia de la Licencia en
 
 http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+A menos que sea requerido por ley aplicable o se acuerde por escrito, el software distribuido bajo la Licencia se distribuye en una base “TAL CUAL”, SIN GARANTÍAS O DECLARACIONES DE NINGÚN TIPO, ya sean expresas o implícitas. Consulta la Licencia para conocer los permisos específicos y las limitaciones bajo la Licencia.
 
-Please note: this is not a Google product
+Por favor ten en cuenta: este no es un producto de Google.
